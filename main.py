@@ -54,7 +54,7 @@ def task_3(title):
         pattern_3 = r'[\d]{4}-[\d]{2}-[\d]{2}'
         date = re.findall(pattern_3, text)
 
-        pattern_4 = r'https?://[\w.\-/]*'
+        pattern_4 = r'https?://[\w./\-]*'
         website = re.findall(pattern_4, text)
 
         pattern_5 = r'(?<=[\s])([\d]+)\s'
