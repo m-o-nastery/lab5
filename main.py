@@ -26,8 +26,10 @@ def task_1(title):
 
 
 def task_2(title):
-    with open(title, encoding='utf-8') as file, \
-            open('task_2.txt', 'w', encoding='utf-8') as task_2_output:
+    with (
+        open(title, encoding='utf-8') as file,
+        open('task_2.txt', 'w', encoding='utf-8') as task_2_output
+        ):
         text = file.read()
         pattern = r'(?<![\w/])#[0-9a-fA-F]{3,6}\b'
         match = re.findall(pattern, text)
@@ -35,7 +37,7 @@ def task_2(title):
         task_2_output.write('Все обозначения цветов:\n')
         for row in range(len(match)):
             task_2_output.write(f'{row + 1}. {match[row]}\n')
-        print(match)
+        # print(match)
 
 
 def task_3(title):
